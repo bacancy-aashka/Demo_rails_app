@@ -1,0 +1,57 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+      <h2><%= pluralize(user.errors.count, "Errors") %>  Thrown:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+    <% end %>
+      </ul>
+  <% end %>
+
+    <%= form.label :First_Name %>
+    <%= form.text_field :firstname %>
+    <br><br>
+    
+    <%= form.label :Last_Name %>
+    <%= form.text_field :lastname %>
+    <br><br>
+    
+    <%= form.label :Email %>
+    <%= form.text_field :email %>
+    <br><br>
+    
+    <%= form.label :Age %>
+    <%= form.number_field :age %>
+    <br><br>
+    
+    <%= form.label :Degree %>
+    <%= form.text_field :degree %>
+    <br><br>
+    
+    <%= form.label :Year_Completed %>
+    <%= form.number_field :year %>
+    <br><br>
+
+    <%= form.label :Company_Name %>
+    <%= form.text_field :com_name %>
+    <br><br>
+
+    <%= form.label :Website %>
+    <%= form.text_field :website %>
+    <br><br>
+
+    <%= form.label :Username %>
+    <%= form.text_field :username %>
+    <br><br>
+    
+    <%= form.label :Password %>
+    <%= form.text_field :password %>
+    <br><br>
+
+    <%= form.label :Confirm_Password %>
+    <%= form.text_field :password_confirmation %>
+    
+    <br><br>
+    <%= form.submit :Create_User %>
+<% end %>
